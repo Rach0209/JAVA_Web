@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+  </body>
+  <script>
+    // 흐름 제어하는 제어문이 있다. (if, for같은)
+    // {}중괄호. 짝 맞추기. 컴파일 에러를 보내지 않기 때문에, 잘 확인하기.
+
+    {
+      var myVar = 10;
+      let localVar = 20; // let => 지역변수 만들기 // 요즘은 var 대신 let 지역변수를 추천하는 편.
+      const final = 30; // 상수표현 java의 final과 비슷하다.
+
+      console.log(localVar); // 중괄호 밖에서 error 발생
+
+      // final = 40; // 값을 변경하고자하면 에러. => 상수라서.
+
+      console.log(final); // 지역에서 존재.
+    }
+    console.log(myVar);
+  </script>
+</html>

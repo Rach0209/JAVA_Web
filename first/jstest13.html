@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 버튼을 누르면 마우스를 누르는 클릭 이벤트가 발생. -->
+    <button id="mybtn">눌러봐</button>
+
+    <input id="mytext" />
+    <button id="printbtn">확인</button>
+  </body>
+  <script>
+    // 버튼과 소통 할 수 있는 객체를 만들어 준다.
+    // 소통하는 객체 => DOM 'Document Object Model'
+    function myListener(e) {
+      alert("왜 눌렀어?? 어? 어? 어? ");
+      console.log(e);
+    }
+
+    // mybtn.onclick = myListener;
+    // 스윙과 비슷한 호출방식. addEventListener 사용하기.
+    let elem = document.getElementById("mybtn");
+    elem.addEventListener("click", myListener);
+
+    // let inputText = document.getElementById("mytext");
+    // console.log(mytext.value);
+
+    // text 입력 요소, button 요소를 배치하고
+    // 사용자가 입력한 내용을 콘솔 출력하기
+    let printbtn = document.getElementById("printbtn");
+    let inputText = document.getElementById("mytext");
+
+    // swing의 mousePressed => mousedown, mouseReleased => mouseup
+    printbtn.addEventListener("mouseup", function (e) {
+      console.log(inputText.value);
+    });
+  </script>
+</html>

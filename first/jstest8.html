@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+    <p><h1>점슴 추천 쩜~</h1></p>
+  </body>
+  <script>
+    let i = 10;
+    // switch는 엄격한 비교(strict)를 한다.
+    // case에 boolean 값도 가능. '==='으로 비교하거나, true넣어도 됨.
+    switch ("10") {
+      case 1: 
+          console.log("1임");
+          break;
+      case "1" + "0": // case에 표현식이 들어가진다. 연산값을 엄격비교해서 같으면 참.
+          console.log("10임");
+      default:
+          console.log("기본");  
+    }
+  </script>
+</html>

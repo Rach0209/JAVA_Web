@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="stopwatch">스탑워치</button>
+  </body>
+  <script>
+    // setTimeout(function() {
+    //   console.log("3초 후에 출력");
+    // }, 3000); // 함수를 전달받고 뒤에 숫자를 전달받음(3000 = 3초), 그 초 뒤에 해당 함수가 실행
+
+    // var number = 0;
+    // setInterval(function() {
+    //   number++;
+    //   console.log(number);
+    // }, 1000); // 함수 하나 전달받고, 해당 시간 단위마다 함수 호출
+
+    // 버튼을 누르면 0부터 시작하는 스탑워치 (정지 없어도 됨)
+    // clearInterval(동일한 함수 참조) : 함수 참조한 것을 지워줌
+    let stopwatch = document.getElementById("stopwatch");
+
+    var number = 0;
+    var count = 0;
+    let set;
+    stopwatch.addEventListener("click", function (e) {
+      if (count % 2 == 0) {
+        count++;
+        console.log("스탑워치 시작");
+        set = setInterval(function () {
+          number++;
+          console.log(number + "초");
+        }, 1000);
+      } else if (count % 2 == 1) {
+        count++;
+        console.log(number + "초에 멈춤");
+        clearInterval(set);
+        number = 0;
+      }
+    });
+  </script>
+</html>

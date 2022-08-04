@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="move">이동하기</button>
+    <div id="mydiv"></div>
+    <button id="changebtn">텍스트값 변경하기</button>
+    <button id="color">색상 변경하기</button>
+  </body>
+  <script>
+    // 네이버로 이동시켜 버리기~
+    document.getElementById("move").addEventListener("click", function (e) {
+      if (confirm("네이버로 이동하시겠습니까?")) {
+        window.location.href = "https://www.naver.com";
+      }
+    });
+
+    let mydiv = document.getElementById("mydiv");
+    let changebtn = document.getElementById("changebtn");
+    let colorbtn = document.getElementById("color");
+
+    // innerText에는 태그 표현인 것 같지만 텍스트 로드로써, 일반적인 글자로 표현된다.
+    // innerHTML로 변경해주면 태그 표현이 사용 가능하다. - 특별한 상황에서만 쓰기~~~!
+    changebtn.addEventListener("click", function (e) {
+      mydiv.innerHTML = "<strong>텍스트 값을 변경하였습니다.</strong>";
+    });
+
+    // mydiv.style.color = "red";와 같은 속성을 가지는 함수. 버튼을 클릭했을 때 이벤트 발생.
+    colorbtn.addEventListener("click", function (e) {
+      mydiv.classList.toggle("red"); // classList를 통해서 속성을 변경하는데, toggle은 붙였다가 없앴다가 할 수 있음.
+    });
+  </script>
+</html>

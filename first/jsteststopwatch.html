@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stop!</title>
+  </head>
+  <body>
+    <button id="start">시작</button>
+    <div id="mydiv"></div>
+    <img
+      id="stop"
+      src="https://c.tenor.com/QMNLPlJAGB4AAAAC/%ED%8F%AD%EB%A0%A5%EB%A9%88%EC%B6%B0.gif"
+      alt="멈춰!"
+    />
+  </body>
+  <script>
+    // 버튼을 누르면 0부터 시작하는 스탑워치 (정지없어도됨)
+    let mydiv = document.getElementById("mydiv");
+    let okja = "옥자가 코딩의 왕이 됐으면 좋겠다^*^";
+    let start = document.getElementById("start");
+    let stopwatch = document.getElementById("stop");
+
+    var number = 0;
+    var clear;
+    start.addEventListener("click", function (e) {
+      clear = setInterval(function () {
+        number++;
+        console.log(number);
+        mydiv.innerHTML = "<strong>" + number + "</strong>";
+      }, 1000);
+    });
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 1000단위가 1초. html 수업 때 했었다. 기억 해내거라.
+    setTimeout(function () {
+      console.log("3초 후에 출력");
+    }, 3000);
+
+    var number = 0;
+    setInterval(function () {
+      number++;
+      console.log(number);
+    }, 1000);
+  </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+    <p><h1>점슴 추천 쩜~</h1></p>
+  </body>
+  <script>
+    // if의 ()안에 문자열도 가능..
+    // 값이 있는 문자열("asdfzxcv")은 true. 값이 없는 문자열("")은 false
+    // 숫자도 마찬가지. 값이 있으면 true, 0이면 false
+    // {} -> 객체표현 [] -> array표현 등은 true , null, NaN, undefined 이면 false
+    // false, "", null, NaN, undefined이 아니면 거의 다 true라고 생각하면됨.
+    if ("a") {
+      console.log("참임");
+    } else {
+      console.log("거짓임");
+    }
+
+    // 삼항 연산자도 가능.
+    let result = true ? "왼쪽" : "오른쪽";
+    console.log(result); // 왼쪽
+
+    // ?? => 왼쪽의 값이 null 이면 우측의 대체값으로 바꾸어줌.
+    let nullish = null ?? "hello";
+    console.log(nullish); // hello
+
+    // and 연산자의 경우 => 첫 번째로 false로 판단 될 수 있는 값을 찾아냄. 없으면 제일 마지막 것.
+    // 참과 거짓을 판별하는데, 순서대로 판단하지만, 거짓인 값을 판별 후 거짓이면 값 반환해줌.
+    // or 연산자는 and 연산자의 역순느낌.
+    // 참으로 판단하며, 역순서대로 판단하며, 첫번째 참값을 찾아냄
+    // 모두 거짓이면 젤 뒤의 값이 나옴 "zxcv"
+    console.log("asdf" && "" && "abbb"); // 왼쪽부터 거짓을 찾아감. "" 공백 반환.
+    console.log(true && true); // true
+    console.log(false || true); // true
+
+    console.log("asdf" && "abbb"); //abbb
+    console.log(0 && 500); // 0
+
+    console.log("asdf" || null); // asdf
+    console.log(0 || 500); // 500
+    console.log(0 || null || false || "zxcv"); // 모두 거짓이라 마지막 값이 반환.
+
+    // ! 부정
+    console.log(!"asdf"); // false
+    console.log(!0); // true
+
+  </script>
+</html>

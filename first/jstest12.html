@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+    <p><h1>신기한 자바스크립트 함수의 세계</h1></p>
+    <p>킹받게 만드는 표현들이네요.정말.</p>
+  </body>
+  <script>
+    // 함수를 파라미터로 전달 받을 수 있다. => 변수로 되어있기 때문에.
+    // 파라미터에 함수를 호출할 수 있다.
+    // ***** 콜백 함수 Callback function *****
+    // 한번 뿐만 아니라 여러 번도 사용 가능.
+    function eat(act) {
+      console.log("밥 먹구");
+      act();
+    }
+
+    let sleep = function() {
+      console.log("잠 자기");
+    }
+
+    let study = function() {
+      alert("공부하기");
+    }
+
+    // eat(sleep);
+    // eat(study);
+    
+    // 함수를 호출한 것이아니라, 함수의 이름만 불렀을 때
+    // => 함수 객체이다. 객체에 대한 다름 이름이 생기는 것.
+    // 다른 이름으로 함수를 호출하는 함수가 호출됨. 헷갈려~
+    // 함수를 하나의 객체라고 생각하자~!~!~!
+    let anotherName = eat;
+    anotherName(sleep);
+    anotherName(study);
+  </script>
+</html>

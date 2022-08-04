@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+    <p><h1>점슴 추천 쩜~</h1></p>
+  </body>
+  <script>
+    // 자바에서처럼 리턴 주기.
+    // 함수 작성시, 리턴값을 다른타입으로 반환하면 매우 사용하기 어려워지기 때문에, 사용하지 않는 것이 좋다.
+    function sum(a, b) {
+      if (a > b) {
+        return a + b;
+      } else {
+        return "b가 a보다 큽니다.";
+      }
+    }
+
+    // 비어있는 함수가 있거나, return값이 없을 경우에는 undefined로 반환해준다.
+    // JAVA에서는 리턴값이 없다고 알려주지만, javascript는 그렇지 않다. 문법적으로는 문제가 없기 때문!!
+    function someFunc() {
+      return;
+    }
+
+    let result = sum(30, 20);
+    console.log(result);
+
+    let someResult = someFunc();
+    console.log(someResult);
+
+  </script>
+</html>
