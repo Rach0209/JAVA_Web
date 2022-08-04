@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 연습</title>
+    <style>
+        /*figure 태그 자체에 마진이 붙어 있기 때문에
+        설정 gap값 이상으로 벌어지는 것을 막음.*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #333;
+        }
+
+        .responsive {
+            background: #f00;
+        }
+
+        .responsive span {
+            display: none;
+        }
+
+        .res02 {
+            display: flex;
+            gap: 20px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .res02 figure {
+            flex: 1;
+            background: #ff0;
+        }
+
+        nav {
+            background: #f00;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            line-height: 40px;
+        }
+
+        nav>ul a {
+            display: block;
+            padding: 0 15px;
+            color: #fff;
+        }
+
+        .mopen {
+            display: none;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .mopen::before {
+            content: "O";
+        }
+
+        .mopen.on::before {
+            content: "X";
+        }
+
+
+        /* @media 만약에 라는 뜻.(if) */
+        @media (max-width: 768px) {
+            .responsive {
+                background: #369;
+            }
+
+            .responsive span {
+                display: block;
+            }
+
+            .res02 {
+                display: flex;
+                flex-direction: column;
+                /*기본은 row*/
+                gap: 20px;
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .res02 figure {
+                flex: 1;
+                background: #f00;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                background: #fff;
+                width: calc(100% - 90px);
+                /*오른쪽 화면크기를 고정시킬때. calc 는 계산기
+                90px을 남기고 나머지를 채운다*/
+                height: 100vh;
+                /*vh 뷰포터 높이의 100% 설정 와이드도 마찬가지*/
+                padding: 50px 15px;
+                transition: 0.5s;
+            }
+
+            /*nav에 on이라는 클래스가 붙었을때!*/
+            nav.on {
+                left: 0;
+            }
+
+            nav>ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                list-style: none;
+                line-height: 40px;
+            }
+
+            nav>ul a {
+                display: block;
+                padding: 0 15px;
+                color: #333;
+                border-bottom: 1px solid #ddd;
+            }
+
+            /*모바일에서만 보이게 만듬.*/
+            .mopen {
+                display: block;
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="responsive">
+        <h1>
+            <span>선택장애잇음.</span>
+        </h1>
+    </div>
+
+    <div class="res02">
+        <figure>01</figure>
+        <figure>02</figure>
+        <figure>03</figure>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="">menu01</a></li>
+            <li><a href="">menu02</a></li>
+            <li><a href="">menu03</a></li>
+            <li><a href="">menu04</a></li>
+        </ul>
+    </nav>
+    <div class="mopen">
+
+    </div>
+
+    <script>
+        /*mopen을 클릭했을 때 nav에 on이라는 클래스를 붙여주는 기능. 크롬개발자 도구로 확인 가능*/
+        document.querySelector('.mopen').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('on');
+            this.classList.toggle('on');
+        })
+    </script>
+</body>
+
+</html>

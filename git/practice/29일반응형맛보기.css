@@ -1,0 +1,43 @@
+.mopen {
+    display: none; 
+    position: fixed; 
+    top: 30px; 
+    right: 30px; 
+    font-size: 30px; 
+    padding: 10px; 
+    background: #ddd;
+}
+
+@media (max-width:768px) {
+    .mopen {
+        display: block; 
+    }
+}
+
+/* 여기부터 연습 아무거나 */
+/* 리셋 시키기 */
+ul, ol {list-style: none;}
+a {color: inherit; text-decoration: none;}
+img {vertical-align: middle;}
+body {font-family: 'Noto Sans KR', sans-serif; line-height: 1;}
+
+/* 바꾸기 시작 */
+
+body {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.title_box {
+    text-align: center;
+}
+
+.menus, .menus2, .menus3 {
+   
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid red;
+}

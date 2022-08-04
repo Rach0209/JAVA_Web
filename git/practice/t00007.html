@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아무거나 함</title>
+    <link rel="shortcut icon" href="/github.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <div>
+        <section>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+            <i class="xi-apple"></i>
+
+
+        </section>
+        <style>
+            #toc-content {
+                display: none;
+            }
+
+            #toc-toggle {
+                cursor: pointer;
+                color: #2962ff;
+            }
+
+            #toc-toggle:hover {
+                text-decoration: underline;
+            }
+        </style>
+
+        목차 [<span id="toc-toggle" onclick="openCloseToc()">보이기</span>]
+        <ol id="toc-content">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+
+        <script>
+            function openCloseToc() {
+                if (document.getElementById('toc-content').style.display === 'block') {
+                    document.getElementById('toc-content').style.display = 'none';
+                    document.getElementById('toc-toggle').textContent = '보이기';
+                } else {
+                    document.getElementById('toc-content').style.display = 'block';
+                    document.getElementById('toc-toggle').textContent = '숨기기';
+                }
+            }
+        </script>
+
+        <style>
+            .answer {
+                display: none;
+                padding-bottom: 30px;
+            }
+
+            #faq-title {
+                font-size: 25px;
+            }
+
+            .faq-content {
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .question {
+                font-size: 19px;
+                padding: 30px 0;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                background: none;
+                width: 100%;
+                text-align: left;
+            }
+
+            .question:hover {
+                color: #2962ff;
+            }
+
+            [id$="-toggle"] {
+                margin-right: 15px;
+            }
+        </style>
+
+        <div class="faq-content">
+            <button class="question" id="que-1"><span id="que-1-toggle">+</span><span>'HTML'이란 무엇인가요?</span></button>
+            <div class="answer" id="ans-1"><a href="./t01.html">test01</a></div>
+        </div>
+        <div class="faq-content">
+            <button class="question" id="que-2"><span id="que-2-toggle">+</span><span>'CSS'란 무엇인가요?</span></button>
+            <div class="answer" id="ans-2">캐스케이딩 스타일 시트(Cascading Style Sheets)입니다.</div>
+        </div>
+        <div class="faq-content">
+            <button class="question" id="que-3"><span id="que-3-toggle">+</span><span>'JavaScript'란
+                    무엇인가요?</span></button>
+            <div class="answer" id="ans-3">자바스크립트는 객체(Object)를 기초로 하는 스크립트 프로그래밍 언어입니다.</div>
+        </div>
+
+        <script>
+            const items = document.querySelectorAll('.question');
+
+            function openCloseAnswer() {
+                const answerId = this.id.replace('que', 'ans');
+
+                if (document.getElementById(answerId).style.display === 'block') {
+                    document.getElementById(answerId).style.display = 'none';
+                    document.getElementById(this.id + '-toggle').textContent = '+';
+                } else {
+                    document.getElementById(answerId).style.display = 'block';
+                    document.getElementById(this.id + '-toggle').textContent = '-';
+                }
+            }
+
+            items.forEach(item => item.addEventListener('click', openCloseAnswer));
+        </script>
+
+        <script src="./TRN01/js/jquery-1.12.4.min.js"></script>
+        <script src="./TRN01/js/slick.min.js"></script>
+
+
+</body>
+
+</html>

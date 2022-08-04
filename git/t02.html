@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스만들기2 플렉스사용</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /*플렉스로 박스들을 가로 정렬
+        마진은 상우하좌 순서
+        text-align 가운데 정렬*/
+
+        section {
+            display: flex;
+            margin: 0 auto 0 auto;
+            text-align: center;
+            width: 1200px;
+            background: #f00;
+        }
+
+        /* 플렉스이용한 크기조절 */
+        section>div {
+            flex: 1;
+            color: #369;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>001</div>
+        <div>002</div>
+        <div>003</div>
+        <div>004</div>
+    </section>
+    <div>004</div>
+
+</body>
+
+</html>

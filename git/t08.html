@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./TRN01/css/reset.css">
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        section h2 {
+            font-size: 21px;
+            font-weight: 500;
+            margin: 0 0 30px 0;
+        }
+
+
+        section h2::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 60px;
+            background: #f00;
+            margin: 20px auto;
+        }
+
+        section p {
+            font-size: 15px;
+            font-weight: 300;
+            margin: 0 0 30px 0;
+        }
+
+
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        section .container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .content figure .inbox {
+            overflow: hidden;
+        }
+
+        /*img에 inbox이름 붙여서 이미지만 overflow시킨다.*/
+
+        .content figure img {
+            transition: 1s;
+        }
+
+        .content figure:hover img {
+            transform: scale(1.5);
+            transition: 0.5s;
+        }
+
+        .con02 figure {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .con02 figure a {
+            position: absolute;
+            right: 0;
+            bottom: -38px;
+            transition: 0.5s;
+            border: 1px solid #333;
+            background: #fff;
+            padding: 10px;
+        }
+
+
+        .con02 figure:hover a {
+            bottom: 0;
+        }
+
+        .con03 .inbox {
+            position: relative;
+        }
+
+
+        /*before after로 테두리*/
+        .con03 .inbox::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            /*height는 보통 박스에서 100% 되지않음. 기준이 있을때만 적용가능*/
+            border-top: 1px solid #333;
+            border-left: 1px solid #333;
+            transition: 0.5s;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        .con03 .inbox::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            /*height는 보통 박스에서 100% 되지않음. 기준이 있을때만 적용가능*/
+            border-bottom: 1px solid #333;
+            border-right: 1px solid #333;
+            transition: 0.5s 0.3s;
+            box-sizing: border-box;
+            opacity: 0;
+        }
+
+        /*before after에는 기본적으로 * {} 먹히지 않음.*/
+
+        .con03 .inbox:hover::before,
+        .con03 .inbox:hover::after {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fugiat facere fuga deleniti enim fugit maiores?</p>
+        <div class="container">
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s011.jpg" alt="">
+                </div>
+                <a href="">more</a>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s012.jpg" alt="">
+                </div>
+                <a href="">more</a>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s013.jpg" alt="">
+                </div>
+                <a href="">more</a>
+            </figure>
+        </div>
+    </section>
+
+    <hr>
+    <!--section으로 한번에 레이아웃 묶기-->
+    <section class="con02">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fugiat facere fuga deleniti enim fugit maiores?</p>
+        <div class="container">
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s011.jpg" alt="">
+                </div>
+                <a href="">
+                    <i class="xi-cart"></i></a>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s012.jpg" alt="">
+                </div>
+                <a href="">more</a>
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s013.jpg" alt="">
+                </div>
+                <a href="">more</a>
+            </figure>
+        </div>
+    </section>
+
+    <hr>
+    <section class="con03">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fugiat facere fuga deleniti enim fugit maiores?</p>
+        <div class="container">
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s011.jpg" alt="">
+                </div>
+
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s012.jpg" alt="">
+                </div>
+
+            </figure>
+            <figure>
+                <div class="inbox">
+                    <img src="./TRN01/img/main_s013.jpg" alt="">
+                </div>
+
+            </figure>
+        </div>
+    </section>
+</body>
+
+</html>

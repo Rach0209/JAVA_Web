@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>태그 연습하기~</title>
+    <style>
+        header {
+            background-color: #383838;
+            border: 1px solid red;
+        }
+        /* header > h1 */
+        /* header h1 */
+        #white-heading {
+            color: #fff;
+            text-align: center;
+        }
+        .red-heading {
+            color: red;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        main {
+            flex: 3;
+            background-color: aqua;
+        }
+        aside {
+            flex: 1;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <!-- 주석이 기억이 안납니까? 여러분들? -->
+    <header>
+        <h1 id="white-heading" class="asdf">헤더 영역</h1>
+        <h1 class="red-heading asdf">헤딩이 두개면?</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="first.html">첫번째</a></li>
+            <li><a href="second.html">두번째</a></li>
+            <li><a href="inner/third.html">세번째</a></li>
+            <li><a href="inputtest.html">입력연습</a></li>
+        </ul>
+        <!--
+        <ol>
+            <li>아이템</li>
+            <li>아이템</li>
+            <li>아이템</li>
+        </ol>
+        -->
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1 class="red-heading">메인 영역</h1>
+            <article>
+                <h2>글 내용 요약 제목</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </article>
+        </main>
+        <aside>사이드 영역</aside>
+    </div>
+    <footer>푸터 영역</footer>
+</body>
+</html>

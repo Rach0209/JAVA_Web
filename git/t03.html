@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 만들기 2 Z축</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main_visual {
+            padding: 100px 0;
+            background: #ddd;
+            text-align: center;
+        }
+
+        .main_visual h2 {
+            font-size: 30px;
+            margin: 0 0 20px 0;
+        }
+
+        .main_visual P {
+            font-size: 15px;
+            margin: 0 0 30px;
+        }
+
+        /* 플렉스 정렬 시키고 갭을 통한 이미지 간격 갭은 익플 적용불가*/
+        .main_visual .container {
+            display: flex;
+            gap: 30px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main_visual .container img {
+            width: 100%;
+        }
+
+        /* 앱솔루트로 제일 위로 보내기*/
+        .main_visual .container span {
+            position: absolute;
+            top: 100px;
+            left: 300px;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            color: #fff;
+            background: lightpink;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        /*호버를 사용한 동작활용*/
+        .main_visual .container:hover span {
+            border-radius: 30%;
+            left: 400px;
+        }
+
+        /* 호버로 확대 기능 */
+        .main_visual .container figure:hover img {
+            transform: scale(1.4);
+        }
+
+        /* 오버플로우 활용한 객체의 넘치는 크기를 박스를 벗어나지 않게함*/
+        .main_visual .container figure {
+            overflow: hidden;
+        }
+
+        /* 부드러운 동작을 위한 트랜지션 */
+        .main_visual .container figure img {
+            transition: 0.4s;
+        }
+
+        /* 반응형 버튼 만들기 */
+        .mopen {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #333;
+            width: 100px;
+            height: 100px;
+        }
+
+        .mopen>span {
+            position: absolute;
+
+            left: 20px;
+            width: 60px;
+            height: 5px;
+            background: #fff;
+            transition: 0.5s;
+        }
+
+        /* 반응형 버튼의 모양바꾸기 로테이트 사용 */
+        .mopen>span:nth-child(1) {
+            top: 20px;
+        }
+
+        .mopen>span:nth-child(2) {
+            top: 40px;
+        }
+
+        .mopen>span:nth-child(3) {
+            top: 40px;
+        }
+
+        .mopen>span:nth-child(4) {
+            top: 60px;
+        }
+
+        .mopen.oo>span:nth-child(1) {
+            display: none;
+        }
+
+        .mopen.oo>span:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .mopen.oo>span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+        .mopen.oo>span:nth-child(4) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main_visual">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Maxime quidem corporis saepe dolore? Mollitia,
+            doloribus maiores?<br /> Necessitatibus adipisci architecto debitis! Consequuntur accusantium tenetur
+            officia quod
+            quos velit. Delectus, et eligendi?</p>
+        <div class="container">
+            <figure>
+                <img src="doongle.jpg" alt="">
+                <span>둥글이의식빵</span>
+            </figure>
+            <figure><img src="doongle.jpg" alt=""></figure>
+            <figure><img src="doongle.jpg" alt=""></figure>
+        </div>
+        <div></div>
+        <span>귀여운둥글이</span>
+    </section>
+
+    <div class="mopen">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <script>
+        document.querySelector('.mopen').addEventListener('click', function () {
+            console.log('찍네!!!');
+            //자기에게 oo 클래스를 붙여줘
+            this.classList.toggle('oo')
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,883 @@
+/* 메인 css제작 */
+
+
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header .top_banner {
+    border-bottom: 1px solid #ddd;
+    line-height: 40px;
+}
+
+.header .top_banner span {
+    margin: 0 0 0 auto;
+}
+
+.header .top_banner a {
+    margin-left: 0 0 0 10px;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.header .gnb {
+    margin: 0 0 0 auto;
+}
+
+
+
+.header .gnb>ul {
+    display: flex;
+    gap: 30px;
+    line-height: 90px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/* 메인비주얼 */
+.main_visual {
+    position: relative;
+    height: 600px;
+    background: url(../img/main_slider01.jpg) no-repeat center top/cover;
+}
+/* 떠오르는 것들은 높이를 가지지 않음.
+위의 메인비주얼의 높이를 없애면 메인슬라이더 이미지가 사라짐 
+메인비주얼 포지션을 기준(relative)잡으면 배경에서부터 기준*/
+
+
+
+/* 그라데이션 넣기 */
+.main_visual .itm h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.main_visual .itm02 h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.main_visual .itm03 h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+.main_visual .slogan {
+    position: absolute;
+    top: 100px;
+    right: 600px;
+}
+
+
+/* 슬라이더 위치 잡기 */
+.main_slider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1200px;
+}
+
+.main_slider .itm {
+    height: 200px;
+}
+
+.main_slider h3 {
+    font-size: 60px;
+    font-weight: 900;
+    margin: 0 0 30px 0;
+    color: #00f;
+}
+
+.main_slider strong {
+    display: block;
+    margin: 0 0 30px 0;
+    color: #fd7e14;
+}
+
+.main_slider .slick-dots {
+padding: 30px 0 0 0;
+}
+
+.main_slider .slick-dots li {
+    display: inline-block;      /* slick에서는 flex대신 inline-block을 사용하여 왔기 때문이고,
+    플렉스와는 충돌 같은것이 일어날 수 있기 때문이다.*/
+    margin: 0 10px 0 0;
+    width: 80px;
+    height: 4px;
+    background: #333;
+}
+
+.main_slider .slick-dots li.slick-active {
+    background: #fd7e14;
+}
+
+.main_slider .slick-dots button {
+    display: none;
+}
+
+.main_banner .container {
+    height: 220px;
+    align-items: flex-end;
+}
+
+
+.main_banner {
+    transform: translateY(-50%);    /*포지션 사용하면 레이아웃 전체가 흔들려서, 배너자체를 움직여 준다*/
+}
+
+
+
+/* display: flex 대신 옛날 방식으로 width: 16.666666%; 로 나누기도 함. */
+
+.main_banner figure {
+    display: flex;      /*flex는 기본값이 늘어나는 것*/
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    justify-content: center;    /*justify-content: center; 가운데 정렬. */
+    align-items: center;    /* 내용물을 중앙으로 옮김*/
+    height: 200px;
+    transition: 0.5s;
+}
+
+.main_banner figure:hover {
+    height: 220px;
+}
+
+
+.main_banner figure:nth-child(1) {
+    background: #e7948f;
+    
+}
+.main_banner figure:nth-child(2) {
+    background: #f3ca4f;
+    
+}
+.main_banner figure:nth-child(3) {
+    background: #337688;
+    
+}
+.main_banner figure:nth-child(4) {
+    background: #6fa376;
+    
+}
+
+/* a는 블록이 아니기 때문에  display: block 필요
+혹은 100줄의 피규어에 display: flex;를 삽입*/
+.main_banner figure a {
+    display: flex;
+    align-items: flex-end;  /*flex입힌 곳에 써야 내려간다*/
+    justify-content: center; /*flex로인해 줄어든 것을 
+                            justify-content를 사용해 다시 가운데 정렬하였다.*/
+    width: 100px;
+    height: 120px;
+    font-size: 13px;
+}
+
+
+.main_banner .customer {
+    position: relative;     /* i를 위해 기준을 잡아줌.*/
+    flex: 2;
+    text-align: right;
+    background: #dddddd;
+    padding: 50px 30px 50px 0 ;    /*border: 20px solid transparent; 를 넣으면 달라짐*/
+}
+
+.main_banner .customer a {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 38px;
+    color: #369;    /*그라데이션 숙제하기*/
+    font-weight: 700;
+}
+
+.main_banner .customer a {
+    background: linear-gradient(to top, #03ccfe, #0237ab);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.main_banner .customer i {
+    position: absolute;
+    top: -29px;
+    right: 30px;
+    color: #fff;
+    background: #e7948f;
+    font-size: 38px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.main_link {
+    padding: 0 0 100px 0;
+    background: linear-gradient(to top, #f7f7f7 70%, transparent 30%); /*transparent를 쓰면 투명이됨, 뒤에 50%비율로 직선을 만들 수 있음.-선을 만들 때 앞 비율을 높여주면 선이 생김. 뒤 비율을 높이면 그라데이션 */
+}
+
+.main_link h2 {
+    text-align: center; /*주석처리 해놓음.인덱스 121라인 */
+    margin: 0 0 50px 0;
+}
+
+/* h2에 선 만들기 */
+.main_link h2::before {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.main_link h2::after {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+
+.main_banner figure:nth-child(1) a {
+    background: url(../img/icon_set_w.png) no-repeat 0 0;
+    transition: 0.5s;
+}
+
+.main_banner figure:nth-child(1):hover a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+    
+}
+
+.main_banner figure:nth-child(2) a {
+    background: url(../img/icon_set_w.png) no-repeat -100px 0;
+}
+
+.main_banner figure:nth-child(3) a {
+    background: url(../img/icon_set_w.png) no-repeat -200px 0;
+}
+
+.main_banner figure:nth-child(4) a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+}
+
+/* 배너와 링크 사이 공간이 생긴이유는 배너 자체를 위로 옮겼기 떄문이다. */
+
+.main_link .container {
+    gap: 30px;
+}
+
+.main_link li::before {
+    content: "\e9e1";
+    font-family: xeicon!important;
+}
+
+.main_link figure {
+    position: relative;
+    flex: 1;
+    border-radius: 50px 0 0 0;       /*이미지 자체가 아닌 박스 자체를 굽게함.*/
+    overflow: hidden;   /*이미를 넣어서 박스 사이에 공간이 생기기 때문에 콘텐츠를 안쪽 여백 상자에 맞추기 위해 잘라냄.*/
+
+}
+
+.main_link figure a {
+    position: absolute; /*메인 배너에서와 다르게 display:flex없이 하는방법*/
+    top: 50%;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: rgba(243, 202, 79, 0.5); /*rgb에 a를 줘서 백그라운드 자체만 투명하게하는 방법.*/
+    text-align: center;
+    line-height: 60px;  /*높이만큼 준다.*/
+    color: #fff;
+    border-radius: 50%;
+    text-transform: uppercase; /*대문자로 바꿔줌으로써 디자인 요소 인해 중앙에 표시되지 않는 것을 맞춤*/
+}
+
+/* 호버로 마우스를 올리면 진한 색이 나오게하기 */
+.main_link figure a:hover {
+    background: rgba(243, 202, 79, 1);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.main_link img {
+    width: 100%; /*inline-block 처럼 행동*/
+    margin: 0 0 30px 0;
+}
+
+.main_link h3 {
+    font-size: 23px;
+    margin: 0 0 30px 0;
+}
+
+/* CSS로 선 만들기 중요텍스트는 사용하지 않음 
+텍스트를 읽어 줄 수 없기 때문 디자인적 요소*/
+.main_link h3::after {
+    content:"";
+    display: block;     /*블록으로 박스를 생성*/
+    width: 80px;
+    height: 1px;
+    background: #fd7e14;
+    margin: 15px 0;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer ul {
+    margin: 10px 0;
+}
+
+.footer ul>li {
+    display: inline-block;
+}
+
+/* li~li 물결표시 씀으로써 제일 앞의 바를 없앰. ~은 자기자신 제외하고 형제들 */
+.footer ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background: #333;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+/* .footer ul>li:first-child::before {
+    display: none;
+} 을 넣어주면 제일 앞의 바가 사라짐 (옛날 방식) */
+
+
+.footer address {
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*비포 애프터연습 CSS부분 (t05.html) */
+
+h1 {
+    text-align: center;
+}
+
+.BFTraining {
+    text-align: center;
+}
+
+.BFTraining h2::before {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.BFTraining h2::after {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+/* 아이콘 비포애프터 */
+.BF li::before {
+    content: "\e91c";
+    font-family: xeicon!important;
+}
+
+.BF li::after {
+    content: "\e91c";
+    font-family: xeicon!important;
+}
+
+
+
+/*
+
+
+반응형 Rach0209 만듬. 2022.05.04
+Responsive 768px 
+
+
+
+*/
+
+@media (max-width:768px) {
+/* 반응형 메인 css제작 */
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: auto;        /*width: auto;반응형에서 주로 씀*/
+    margin: 0 auto; /*필요없는지만 나두는게 국룰*/
+}
+
+
+.header .top_banner {
+    display: none;
+    border-bottom: 1px solid #ddd;
+    line-height: 40px;
+}
+
+.header .top_banner span {
+    margin: 0 0 0 auto;
+}
+
+.header .top_banner a {
+    margin-left: 0 0 0 10px;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.header h1 {
+    padding: 0 15px;
+}
+
+.header .gnb {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: #fff;
+    width: calc(100% - 90px);
+    height: 100vh;
+    margin: 0 0 0 auto;
+    border-right: 1px solid #ddd;
+    z-index: 900; /*999로 잡아주면서 제일 위로 올리는게 국룰*/
+    transition: 0.5s;  /*transition: left 0.5s;한쪽만 적용가능*/
+}
+
+
+.header .gnb.on {
+    left: 0;
+}
+
+
+.header .gnb>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 100px 15px;
+    line-height: 40px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+
+.header .gnb>ul a {
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* 메인비주얼 */
+.main_visual {
+    position: relative;
+    height: calc(100vh - 90px);
+    background: url(../img/main_slider01.jpg) no-repeat right top/cover;
+}
+/* 떠오르는 것들은 높이를 가지지 않음.
+위의 메인비주얼의 높이를 없애면 메인슬라이더 이미지가 사라짐 
+메인비주얼 포지션을 기준(relative)잡으면 배경에서부터 기준*/
+
+
+
+/* 그라데이션 넣기 */
+.main_visual .itm h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.main_visual .itm02 h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.main_visual .itm03 h3 {
+    background: linear-gradient(to right top, #03ccfe, #0237ab, #333333);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+.main_visual .slogan {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 600px;
+}
+
+
+/* 슬라이더 위치 잡기 */
+.main_slider {
+    position: absolute;
+    top: auto;
+    bottom: 150px;
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;    /*absolute상태의 width:auto는 다르다. 작아짐*/
+    padding: 0 30px;
+    text-align: center;
+}
+
+/* 슬라이더의 크기를 줌으로써 안의 다른 내용물이 내려오거나 올라와서 겹치지 않게 함. */
+.main_slider .itm {
+    height: 350px;
+}
+
+
+.main_slider h3 {
+    font-size: 11vw;    /*vw를 사용하여 뷰포터 사이즈로 맞춘다.*/
+    font-weight: 900;
+    margin: 0 0 30px 0;
+    color: #00f;
+}
+
+.main_slider strong {
+    display: block;
+    margin: 0 0 30px 0;
+    color: #fd7e14;
+}
+
+.main_slider .slick-dots {
+    text-align: center;
+padding: 3px 0 0 0;
+}
+
+.main_slider .slick-dots li {
+    display: inline-block;      /* slick에서는 flex대신 inline-block을 사용하여 왔기 때문이고,
+    플렉스와는 충돌 같은것이 일어날 수 있기 때문이다.*/
+    margin: 0 5px 0 0;
+    width: 10px;
+    height: 10px;
+    background: #333;
+}
+
+.main_slider .slick-dots li.slick-active {
+    background: #fd7e14;
+}
+
+.main_slider .slick-dots button {
+    display: none;
+}
+
+.main_banner .container {
+    height: auto;
+    align-items: stretch;   /*기본값 stretch*/
+    flex-direction: row;
+    flex-wrap: wrap;    /*기본값 nowrap*/
+}
+
+
+.main_banner {
+    transform: translateY(0);    /*포지션 사용하면 레이아웃 전체가 흔들려서, 배너자체를 움직여 준다*/
+}
+
+
+
+/* display: flex 대신 옛날 방식으로 width: 16.666666%; 로 나누기도 함. */
+
+.main_banner figure {
+    display: flex;      /*flex는 기본값이 늘어나는 것*/
+    flex: 1 1 50%;
+    text-align: center;
+    color: #fff;
+    justify-content: center;    /*justify-content: center; 가운데 정렬. */
+    align-items: center;    /* 내용물을 중앙으로 옮김*/
+    height: 200px;
+    transition: 0.5s;
+}
+
+.main_banner figure:hover {
+    height: 200px;  /*호버 높이 맞추면서 움직임을 없는것처럼 보이게함.*/
+}
+
+
+.main_banner figure:nth-child(1) {
+    background: #e7948f;
+    
+}
+.main_banner figure:nth-child(2) {
+    background: #f3ca4f;
+    
+}
+.main_banner figure:nth-child(3) {
+    background: #337688;
+    
+}
+.main_banner figure:nth-child(4) {
+    background: #6fa376;
+    
+}
+
+/* a는 블록이 아니기 때문에  display: block 필요
+혹은 100줄의 피규어에 display: flex;를 삽입*/
+.main_banner figure a {
+    display: flex;
+    align-items: flex-end;  /*flex입힌 곳에 써야 내려간다*/
+    justify-content: center; /*flex로인해 줄어든 것을 
+                            justify-content를 사용해 다시 가운데 정렬하였다.*/
+    width: 100px;
+    height: 120px;
+    font-size: 13px;
+}
+
+
+.main_banner .customer {
+    position: relative;     /* i를 위해 기준을 잡아줌.*/
+    flex: 2;
+    text-align: right;
+    background: #dddddd;
+    padding: 50px 30px 50px 0 ;    /*border: 20px solid transparent; 를 넣으면 달라짐*/
+}
+
+.main_banner .customer a {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 38px;
+    color: #369;    /*그라데이션 숙제하기*/
+    font-weight: 700;
+}
+
+.main_banner .customer a {
+    background: linear-gradient(to top, #03ccfe, #0237ab);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.main_banner .customer i {
+    position: absolute;
+    top: -29px;
+    right: 30px;
+    color: #fff;
+    background: #e7948f;
+    font-size: 38px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.main_link {
+    padding: 0 0 100px 0;
+    background: linear-gradient(to top, #f7f7f7 70%, transparent 30%); /*transparent를 쓰면 투명이됨, 뒤에 50%비율로 직선을 만들 수 있음.-선을 만들 때 앞 비율을 높여주면 선이 생김. 뒤 비율을 높이면 그라데이션 */
+}
+
+.main_link h2 {
+    text-align: center; /*주석처리 해놓음.인덱스 121라인 */
+    margin: 0 0 50px 0;
+}
+
+/* h2에 선 만들기 */
+.main_link h2::before {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.main_link h2::after {
+    content:"";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+
+.main_banner figure:nth-child(1) a {
+    background: url(../img/icon_set_w.png) no-repeat 0 0;
+    transition: 0.5s;
+}
+
+.main_banner figure:nth-child(1):hover a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+    
+}
+
+.main_banner figure:nth-child(2) a {
+    background: url(../img/icon_set_w.png) no-repeat -100px 0;
+}
+
+.main_banner figure:nth-child(3) a {
+    background: url(../img/icon_set_w.png) no-repeat -200px 0;
+}
+
+.main_banner figure:nth-child(4) a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+}
+
+/* 배너와 링크 사이 공간이 생긴이유는 배너 자체를 위로 옮겼기 떄문이다. */
+
+.main_link .container {
+    padding: 50px 15px;
+    gap: 30px;
+}
+
+.main_link li::before {
+    content: "\e9e1";
+    font-family: xeicon!important;
+}
+
+.main_link figure {
+    position: relative;
+    flex: 1;
+    border-radius: 50px 0 0 0;       /*이미지 자체가 아닌 박스 자체를 굽게함.*/
+    overflow: hidden;   /*이미를 넣어서 박스 사이에 공간이 생기기 때문에 콘텐츠를 안쪽 여백 상자에 맞추기 위해 잘라냄.*/
+
+}
+
+.main_link figure a {
+    position: absolute; /*메인 배너에서와 다르게 display:flex없이 하는방법*/
+    top: 50%;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: rgba(243, 202, 79, 0.5); /*rgb에 a를 줘서 백그라운드 자체만 투명하게하는 방법.*/
+    text-align: center;
+    line-height: 60px;  /*높이만큼 준다.*/
+    color: #fff;
+    border-radius: 50%;
+    text-transform: uppercase; /*대문자로 바꿔줌으로써 디자인 요소 인해 중앙에 표시되지 않는 것을 맞춤*/
+}
+
+/* 호버로 마우스를 올리면 진한 색이 나오게하기 */
+.main_link figure a:hover {
+    background: rgba(243, 202, 79, 1);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.main_link img {
+    width: 100%; /*inline-block 처럼 행동*/
+    margin: 0 0 30px 0;
+}
+
+.main_link h3 {
+    font-size: 23px;
+    margin: 0 0 30px 0;
+}
+
+/* CSS로 선 만들기 중요텍스트는 사용하지 않음 
+텍스트를 읽어 줄 수 없기 때문 디자인적 요소*/
+.main_link h3::after {
+    content:"";
+    display: block;     /*블록으로 박스를 생성*/
+    width: 80px;
+    height: 1px;
+    background: #fd7e14;
+    margin: 15px 0;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer ul {
+    margin: 10px 0;
+}
+
+.footer ul>li {
+    display: inline-block;
+    padding: 5px 7px;
+}
+
+/* li~li 물결표시 씀으로써 제일 앞의 바를 없앰. ~은 자기자신 제외하고 형제들 */
+.footer ul>li~li::before {
+    content: "";
+    display: none;
+    width: 1px;
+    height: 13px;
+    background: #333;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+/* .footer ul>li:first-child::before {
+    display: none;
+} 을 넣어주면 제일 앞의 바가 사라짐 (옛날 방식) */
+
+
+.footer address {
+    font-style: normal;
+}
+
+
+.mopen {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: #ddd;
+    font-size: 30px;
+}
+
+/*
+.mopen span.on:nth-child(1) {
+    display: none;
+}
+.mopen span.on:nth-child(2) {
+    transform: rotate(45deg);
+}
+.mopen span.on:nth-child(3) {
+    transform: rotate(-45deg);
+}
+.mopen span.on:nth-child(4) {
+    display: none;
+}
+*/
+
+/* 아이콘으로 메뉴 모양 만들기 */
+.mopen::before {   
+    content: "\e903";
+    font-family: xeicon!important;
+}
+
+.mopen.on::before {   
+    content: "\e921";
+    font-family: xeicon!important;
+}
+
+
+}
+

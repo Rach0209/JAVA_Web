@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+  </head>
+
+  <body>
+    <!--
+    <input />
+    <input type="text" />
+    <input type="password" />
+    <input type="number" />
+    <input type="range" />
+
+    <input type="date"/>
+    <input type="month"/>
+    <input type="week"/>
+    <input type="time"/>
+
+    <input type="color" />
+    <input type="file" />
+    -->
+    <form>
+      <label for="searchline">검색어</label>
+      <input
+        id="searchline"
+        type="text"
+        name="searchline"
+        placeholder="여기에 검색어를 입력해주세요."
+      />
+
+      <label>두번째파람<input type="text" name="param2" /></label>
+
+      <label><input type="checkbox" name="lotto" value="1st" />1번</label>
+      <label><input type="checkbox" name="lotto" value="2nd" />2번</label>
+      <label><input type="checkbox" name="lotto" value="3rd" />3번</label>
+
+      <input type="radio" name="raadiochice" value="r1" checked />
+      <input type="radio" name="raadiochice" value="r2" />
+
+      <!--사용자는 보이지 않지만 값을 전송해주는 인풋태그-->
+      <input type="hidden" name="darktemplar" value="zeratul" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
