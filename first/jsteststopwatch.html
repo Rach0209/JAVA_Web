@@ -31,5 +31,8 @@
         mydiv.innerHTML = "<strong>" + number + "</strong>";
       }, 1000);
     });
+    stopwatch.addEventListener("click", function () {
+      clearInterval(clear);
+    });
   </script>
 </html>
