@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>ㅎㅇㅎㅇ</p>
+  </body>
+  <script>
+    console.log(1 > 2); // false
+    console.log(3 < 4); // true
+
+    console.log(10 == 10); // true
+    console.log("abc" == "abc"); // true
+
+    // javascript는 동등함을 비교할 때, 다른 타입도 비교 가능. (== 유연한 비교)
+    // 숫자와 문자열을 비교할 때, 문자열안에서 숫자표현으로 되있는 문자는 숫자로 표현한다.
+    // 1과 boolean을 비교할 때, 1은 boolean이 되서 비교한다.
+    console.log(1 == "1"); // true
+    console.log(1 == true); // true 숫자를 불련값으로 비교
+    console.log(0 == false); // true
+
+    // 엄격한 비교는 '===' (=3개) 사용.
+    console.log(1 === "1"); // false
+    console.log(null == undefined); // true
+    console.log(null === undefined); // false
+
+    // 숫자가 아닌 숫자. NaN은 어떤 것들이랑 비교해도 false값.
+    console.log(NaN == NaN); // false
+    console.log(NaN === NaN); // false
+
+    // NaN인지 아닌지.
+    console.log(isNaN(NaN)); // true
+    // 두 '객체'의 동등함을 비교해주는 메소드; NaN에 대한 동등함비교 가능.
+    console.log(Object.is(NaN, NaN)); // true
+    console.log(Object.is(12435, "12435")); // false ; 엄격한 비교이기 때문.
+  </script>
+</html>
