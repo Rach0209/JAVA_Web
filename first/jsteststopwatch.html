@@ -9,6 +9,8 @@
     <style>
       img {
         display: none;
+        width: 200px;
+        height: 200px;
       }
       .on {
         display: block;
@@ -39,7 +41,8 @@
     function go() {
       number++;
       console.log(number);
-      mydiv.innerHTML = "<strong>" + number + "</strong>";
+      mydiv.innerHTML =
+        "카운트 멈추려면 그림 누르셈. <strong>" + number + "</strong>";
     }
     start.addEventListener("click", function () {
       clear = setInterval(go, 1000);
@@ -50,8 +53,9 @@
     });
     stopwatch.addEventListener("click", function () {
       clearInterval(clear);
-      stopwatch.classList.add("on");
+      stopwatch.classList.remove("on");
       start.classList.remove("off");
+      mydiv.innerHTML = "<strong>" + number + "초다. 어쩔테냐</strong>";
     });
   </script>
 </html>
