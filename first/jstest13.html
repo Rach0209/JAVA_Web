@@ -24,6 +24,8 @@
     // mybtn.onclick = myListener;
     // 스윙과 비슷한 호출방식. addEventListener 사용하기.
     let elem = document.getElementById("mybtn");
+    // myListener() 는 return을 반환해줘야 하는데 없기 때문에, undefined
+    // myListener만 써줌으로써 함수 자체가 들어간다.
     elem.addEventListener("click", myListener);
 
     // let inputText = document.getElementById("mytext");
