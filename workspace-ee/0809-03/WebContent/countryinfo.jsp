@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>원하는 목록맞냐?!</title>
 </head>
 <body>
 <%
@@ -21,7 +21,6 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 Connection conn = null;
 Statement stmt = null;
 ResultSet rs = null;
-List<String> list = new ArrayList<>();
 try {
 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "root");
 	stmt = conn.createStatement();
