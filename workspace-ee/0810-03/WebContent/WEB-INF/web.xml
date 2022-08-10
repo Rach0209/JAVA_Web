@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>0810-03</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>hello.HelloServlet</servlet-class>
+  </servlet>
+  <!-- /hello 주소에는 아무것도 없지만 톰캣은 servlet을 매핑하고 있다는 것을 알고 있고, HelloServlet의 이름을 가진 Servlet을 찾아가서 요청한다. -->
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>ParamServlet</servlet-name>
+  	<servlet-class>hello.ParamServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ParamServlet</servlet-name>
+  	<url-pattern>/param</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>human</servlet-name>
+  	<servlet-class>human.registServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>human</servlet-name>
+  	<url-pattern>/regist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>humanlist</servlet-name>
+  	<servlet-class>human.humanListServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>humanlist</servlet-name>
+  	<url-pattern>/humanlist</url-pattern>
+  </servlet-mapping>
+</web-app>
