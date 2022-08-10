@@ -1,3 +1,4 @@
+<%@page import="kr.co.greenart.CountryDAO"%>
 <%@page import="kr.co.greenart.Country"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,8 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-		List<Country> list = (List<Country>) request.getAttribute("list");
+<%	
+
+	List<Country> list = (List<Country>) request.getAttribute("list");
 %>
 	<ul>
 	<% 

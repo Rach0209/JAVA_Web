@@ -15,16 +15,12 @@
 <title>국가 목록</title>
 </head>
 <body>
- <ul>
- <%
-	String continent = request.getParameter("continent");
+<%
 	CountryDAO dao = new CountryDAO();
-	List<Country> list = dao.getCountryByContinent(continent);
-	
-	request.setAttribute("list", list);
+	String continent = request.getParameter("continent");
+	List<Country> list2 = dao.getCountryByContinent(continent);
+	request.setAttribute("list", list2);
 	request.getRequestDispatcher("result.jsp").forward(request, response);
- %>
-
-	</ul> 
+%>
 </body>
 </html>
