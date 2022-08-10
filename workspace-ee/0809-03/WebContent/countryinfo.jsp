@@ -1,3 +1,4 @@
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.util.ArrayList"%>
@@ -19,12 +20,14 @@
 Class.forName("com.mysql.cj.jdbc.Driver");
 
 Connection conn = null;
-Statement stmt = null;
+PreparedStatement pstmt = null;
 ResultSet rs = null;
 try {
+	String query = "SELECT Name, Population FROM country WHERE continent = ? ORDER BY Population DESC";
 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "root");
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery("SELECT Name, Population FROM country WHERE continent = '" + continent + "' ORDER BY Population DESC");
+	pstmt = conn.prepareStatement(query);
+	pstmt.setString(1, continent);
+	rs = pstmt.executeQuery();
 	
 	while (rs.next()) {
 		String name = rs.getString("Name");
@@ -35,8 +38,8 @@ try {
 	if (rs != null) {
 		rs.close();
 	}
-	if (stmt != null) {
-		stmt.close();
+	if (pstmt != null) {
+		pstmt.close();
 	}
 	if (conn != null) {
 		conn.close();
