@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class registServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		
 		String lastName = req.getParameter("lastName");
 		String firstName = req.getParameter("firstName");
 		int age = Integer.valueOf(req.getParameter("age"));
@@ -21,8 +23,8 @@ public class registServlet extends HttpServlet {
 		System.out.println(firstName);
 		System.out.println(age);
 		
-		HumanDAO dao = new HumanDAO();
 		try {
+			HumanDAO dao = new HumanDAO();
 			dao.registHuman(lastName, firstName, age);
 		} catch (Exception e) {
 			e.printStackTrace();

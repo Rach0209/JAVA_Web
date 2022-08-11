@@ -1,38 +1,13 @@
-<!-- 
-	페이지 이동을 제공하는 index.html 작성
-	
-	a. 사람 등록 페이지(입력 양식 제공)
-		-> action = mapping된 servlet
-		-> service 메소드 {
-			db 행을 추가 하는 동작
-			redirect 응답 (사람 목록 페이지)
-		}
-	b. 사람 목록
-		-> mapping된 servlet
-		-> service 메소드 {
-			db 목록 읽기
-			forward 사람 목록을 보여주는(view) jsp로 
-		}
-		
- -->
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>등록 하러 가?</title>
+<title>고르세요 휴먼</title>
 </head>
 <body>
-	<header>
-		<h1>HUMAN REGIST</h1>
-	</header>
-	<main>
-		<form action="./regist">
-			<input type="text" name="lastName" />
-			<input type="text" name="firstName" />
-			<input type="number" name="age" />
-			<input type="submit" />
-		</form>
-	</main>
+	<h1>고르십시오 휴먼</h1>
+	<a href="./humanForm.html">HUMAN REGIST GOGO</a>
+	<br/>
+	<a href="./humanlist">HUMAN LIST GOGO</a>
 </body>
 </html>

@@ -17,6 +17,8 @@ public class HumanDAO {
 		ResultSet rs = null;
 		List<Human> list = new ArrayList<>();
 		
+		// try (여기) {} <<< 괄호 안에 resource를 적어 주면, try문이 끝나면 사라진다.
+		// 외부자원인 connection이나 statement 등을 넣을 수 있다.
 		try {
 			String query = "SELECT * FROM human";
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_db", "root", "root");
