@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>날 기억 해줘</title>
+<title>날 기억해</title>
 </head>
 <body>
 	<%
