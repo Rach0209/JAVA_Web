@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>에러 발생!!!!</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%
-		int error = 10 / 0;
+		session.invalidate();
 	%>
+	<p>세션이 만료되었습니다.</p>
 </body>
 </html>
