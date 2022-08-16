@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%
-		int error = 10/0;
+		int error = 10 / 0;
 	%>
 </body>
 </html>
