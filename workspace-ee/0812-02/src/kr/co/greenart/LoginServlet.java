@@ -24,14 +24,15 @@ public class LoginServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		String rememberme = request.getParameter("rememberme");
-		Cookie[] cookies = request.getCookies();
+		
+		/*Cookie[] cookies = request.getCookies();
 	      if (cookies != null) {
 	         for(Cookie c : cookies){
 	            if(c.getName().equals("rememberme") && c.getValue().equals(id)){
 	               request.getRequestDispatcher("./testlogin.jsp").forward(request, response);
 	            }
 	         }
-	      } else {
+	      } else {*/
 	    	  if (password.equals("1234")) {
 	    		  // 로그인 성공
 	    		  // 쿠키(아이디)를 담은 성공메세지 응답
@@ -41,14 +42,19 @@ public class LoginServlet extends HttpServlet {
 	    			  
 	    			  c.setMaxAge(60 * 60 * 24); // 기간 : 하루로 설정
 	    			  
+	    			  
 	    			  response.addCookie(c);
 	    		  }
+	    		  
+	    		  Cookie c2 = new Cookie("loginok", "ok");
+	    		  response.addCookie(c2);
+	    		  
 	    		  request.getRequestDispatcher("ok.jsp").forward(request, response);
 	    	  } else {
 	    		  // 실패
 	    		  
 	    	  }
-	      }
+//	      }
 		
 	}
 
