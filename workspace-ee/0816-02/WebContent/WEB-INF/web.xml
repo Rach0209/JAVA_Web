@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>0816-02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+  	<listener-class>kr.co.greenart.MyContextListener</listener-class>
+  </listener>
+  
+  <context-param>
+  	<param-name>driver</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>dburl</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/my_db</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>dbid</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>dbpw</param-name>
+  	<param-value>root</param-value>
+  </context-param>
+  
+  <error-page>
+  	<error-code>401</error-code>
+  	<location>/needlogin.jsp</location>
+  </error-page>
+  
+  <!-- filter 설정해주기 -->
+  <filter>
+	<filter-name>LoginFilter</filter-name>
+	<filter-class>kr.co.greenart.LoginFilter</filter-class>
+	<!-- 필요하다면 init 파라미터 설정 가능~
+	<init-param>
+		<param-name></param-name>
+		<param-value></param-value>
+	</init-param>  	 -->
+  </filter>
+  
+  <!-- 사용자가 board라는 주소를 요청하면, servlet이 요청을 처리하기 전에 먼저 filter를 거치게 된다.
+  		필요하다면 인증이 필요한 곳마다 매핑해주면 됨  -->
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>/board</url-pattern>
+  </filter-mapping>
+</web-app>
