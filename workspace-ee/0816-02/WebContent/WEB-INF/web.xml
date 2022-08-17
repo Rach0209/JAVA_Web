@@ -36,6 +36,12 @@
   	<location>/needlogin.jsp</location>
   </error-page>
   
+  <error-page>
+  	<exception-type>java.lang.RuntimeException</exception-type>
+  	<location>/errorRuntime.jsp</location>
+  </error-page>
+  
+  
   <!-- filter 설정해주기 -->
   <filter>
 	<filter-name>LoginFilter</filter-name>

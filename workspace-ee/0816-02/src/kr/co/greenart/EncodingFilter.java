@@ -31,6 +31,7 @@ public class EncodingFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+		// 모든 요청에 대해 서블릿이 동작하기 전에 인코딩 시킴.
 		request.setCharacterEncoding(encoding);
 		response.setCharacterEncoding(encoding);
 		
