@@ -31,6 +31,10 @@ public class Member {
 		return regDate;
 	}
 	
+	public void changePassword(String newPwd) {
+		this.password = newPwd;
+	}
+	
 	public boolean matchPassword(String pwd) {
 		return password.equals(pwd);
 	}
