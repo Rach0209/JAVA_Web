@@ -2,8 +2,6 @@ package article.service;
 
 import java.util.Map;
 
-import javax.servlet.jsp.PageContext;
-
 public class ModifyRequest {
 	private String userId;
 	private int articleNumber;

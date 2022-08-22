@@ -20,6 +20,7 @@ public class ArticleDao {
 		PreparedStatement pstmt = null;
 		Statement stmt = null;
 		ResultSet rs = null;
+		
 		try {
 			pstmt = conn.prepareStatement("insert into article "
 					+ "(writer_id, writer_name, title, regdate, moddate, read_cnt) " + "values (?,?,?,?,?,0)");
@@ -131,4 +132,41 @@ public class ArticleDao {
 		}
 	}
 
+	public int delete(Connection conn, int no) throws SQLException {
+		try (PreparedStatement pstmt = conn.prepareStatement("DELETE FROM article WHERE (article_no = ?)")) {
+			pstmt.setInt(1, no);
+			return pstmt.executeUpdate();
+		}
+	}
+
+//	// pk값 찾기
+//	public int findIncrement(Connection conn) throws SQLException {
+//		
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		int result = 0;
+//		try {
+//			pstmt = conn.prepareStatement("SELECT COUNT(*) AS number FROM article");
+//			rs = pstmt.executeQuery();
+//			
+//			if (rs.next()) {
+//				result = rs.getInt("number") + 1;
+//			}
+//			return result;
+//		} finally {
+//			JdbcUtil.close(rs);
+//			JdbcUtil.close(pstmt);
+//		}
+//			
+//		
+//	}
+//	
+//	// pk값 수정
+//	public int alterIncrement(Connection conn, int number) throws SQLException {
+//		try (PreparedStatement pstmt = conn.prepareStatement("ALTER TABLE `board`.`article`AUTO_INCREMENT = ?")) {
+//			pstmt.setInt(1, number);
+//			return pstmt.executeUpdate();
+//		}
+//	}
+	
 }

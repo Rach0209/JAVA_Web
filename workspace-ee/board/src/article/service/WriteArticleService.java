@@ -15,13 +15,16 @@ public class WriteArticleService {
 
 	private ArticleDao articleDao = new ArticleDao();
 	private ArticleContentDao contentDao = new ArticleContentDao();
-
+	
 	public Integer write(WriteRequest req) {
 		Connection conn = null;
 		try {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
-
+			
+//			// AI 바꾸기 => 중간 글 삭제하면 최신글이 중간글에 들어가기때문에 포기. 
+//			articleDao.alterIncrement(conn, articleDao.findIncrement(conn));
+			
 			Article article = toArticle(req);
 			Article savedArticle = articleDao.insert(conn, article);
 			if (savedArticle == null) {
