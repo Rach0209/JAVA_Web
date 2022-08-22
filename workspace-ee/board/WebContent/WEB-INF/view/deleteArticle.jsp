@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>가입 완료</title>
+<title>게시글 삭제</title>
 </head>
 <body>
-	${ param.name }님, 회원 가입에 성공했습니다.
+	${ articleNum }번 ${ deleteDone }
+	<br>
+	${ ctxPath = pageContext.request.contextPath ; ''}
 	<a href="${ ctxPath }/article/list.do">[게시글목록보기]</a>
 </body>
 </html>
