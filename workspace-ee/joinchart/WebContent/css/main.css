@@ -1,0 +1,30 @@
+body {
+  font-family: Rubik, sans-serif;
+  line-height: 1.5;
+  background-color: #f9fbfd;
+}
+.tit {
+  text-align: left;
+}
+.chart {
+  display: flex;
+  background-color: #fff;
+}
+
+.album {
+  color: #c9c9c9;
+  font-size: 13px;
+}
+
+table {
+  flex: 1;
+}
+
+td {
+  text-align: center;
+}
+
+td > img.albumArt {
+  width: 50px;
+  height: 50px;
+}
