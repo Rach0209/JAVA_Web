@@ -28,7 +28,7 @@
 		<section class="chart">
 			<table>
 				<tr>
-					<td colspan="5">멜론차트 top 100</td>
+					<td colspan="5" class="chartName">멜론차트 top 100</td>
 				</tr>
 				<tr>
 					<td>순위</td>
@@ -36,7 +36,7 @@
 					<td>제목, 앨범</td>
 					<td>가수</td>
 				</tr>
-				<c:forEach items="${ melonlist }" var="melon" varStatus="i">
+				<c:forEach items="${ melonlist }" var="melon">
 					<tr>
 						<td class="rank"><c:out value="${ melon.rank }" /></td>
 						<td><img class="albumArt" src="${ melon.albumArt }" /></td>
@@ -57,7 +57,7 @@
 			</table>
 			<table>
 				<tr>
-					<td colspan="5">지니차트 top 100</td>
+					<td colspan="5" class="chartName">지니차트 top 100</td>
 				</tr>
 				<tr>
 					<td>순위</td>
@@ -65,7 +65,7 @@
 					<td>제목, 앨범</td>
 					<td>가수</td>
 				</tr>
-				<c:forEach items="${ genielist }" var="genie" varStatus="i">
+				<c:forEach items="${ genielist }" var="genie">
 					<tr>
 						<td class="rank"><c:out value="${ genie.rank }" /></td>
 						<td><img class="albumArt" src="${ genie.albumArt }" /></td>
@@ -86,7 +86,7 @@
 			</table>
 			<table>
 				<tr>
-					<td colspan="5">벅스차트 top 100</td>
+					<td colspan="5" class="chartName">벅스차트 top 100</td>
 				</tr>
 				<tr>
 					<td>순위</td>
@@ -94,7 +94,7 @@
 					<td>제목, 앨범</td>
 					<td>가수</td>
 				</tr>
-				<c:forEach items="${ bugslist }" var="bugs" varStatus="i">
+				<c:forEach items="${ bugslist }" var="bugs">
 					<tr>
 						<td class="rank"><c:out value="${ bugs.rank }" /></td>
 						<td><img class="albumArt" src="${ bugs.albumArt }" /></td>

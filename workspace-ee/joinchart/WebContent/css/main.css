@@ -3,9 +3,7 @@ body {
   line-height: 1.5;
   background-color: #f9fbfd;
 }
-.tit {
-  text-align: left;
-}
+
 .chart {
   display: flex;
   background-color: #fff;
@@ -24,7 +22,13 @@ td {
   text-align: center;
 }
 
+.chartName {
+	padding: 10px;
+	font-size: 20px;
+}
+
 td > img.albumArt {
   width: 50px;
   height: 50px;
 }
+
