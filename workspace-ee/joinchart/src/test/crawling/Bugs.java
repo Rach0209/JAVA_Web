@@ -22,16 +22,15 @@ public class Bugs extends HttpServlet {
 		Document doc = Jsoup.connect(url).get();
 
 		List<Music> bugslist = new ArrayList<>();
-
 		Elements title = doc.select("tbody>tr>th>p.title>a");
-		Elements artist = doc.select("tbody>tr>td.left>p.artist>a");
+		Elements artist = doc.select("tbody>tr>td.left>p.artist>a").not(".more");
 		Elements album = doc.select("tbody>tr>td.left>a.album");
 		Elements albumArt = doc.select("tbody>tr>td>a>img");
 
 		for (int i = 0; i < 100; i++) {
 			int rank = i + 1;
 			String title_temp = title.get(i).text();
-			String artist_temp = artist.get(i).text();
+			String artist_temp = artist.get(i).attr("title");
 			String album_temp = album.get(i).text();
 			String albumArt_temp = albumArt.get(i).attr("src");
 
