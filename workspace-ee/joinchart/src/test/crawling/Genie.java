@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import test.crawling.Music;
 
 public class Genie extends HttpServlet {
@@ -58,6 +62,29 @@ public class Genie extends HttpServlet {
 			genielist.add(new Music(rank_temp, title_temp, artist_temp, album_temp, albumArt_temp));
 		}
 		return genielist;
+	}
+	
+	public static String genieTime() {
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-popup-blocking");
+		options.addArguments("--start-maximized");
+		options.addArguments("headless");
+		ChromeDriver driver = new ChromeDriver(options);
+		String genietime = null;
+			try {
+				driver.get("https://www.genie.co.kr/chart/top200");
+				Thread.sleep(2000);
+				List<WebElement> el = driver.findElementsById("inc_date");
+				List<WebElement> el2 = driver.findElementsById("inc_time");
+				genietime = el.get(0).getText() + " " + el2.get(0).getText();
+				return genietime;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				driver.quit();
+			}
+		return null;
 	}
 
 	@Override

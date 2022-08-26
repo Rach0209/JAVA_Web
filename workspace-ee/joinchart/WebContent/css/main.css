@@ -1,34 +1,59 @@
 body {
-  font-family: Rubik, sans-serif;
-  line-height: 1.5;
+  font-family: "Noto Serif KR", serif;
+  font-family: "Rubik", sans-serif;
   background-color: #f9fbfd;
+  font-size: 15px;
 }
-
 .chart {
   display: flex;
-  background-color: #fff;
-}
-
-.album {
-  color: #c9c9c9;
-  font-size: 13px;
 }
 
 table {
   flex: 1;
 }
-
-td {
-  text-align: center;
+table tr {
+  border-bottom: 1px solid #eee;
 }
-
-.chartName {
-	padding: 10px;
-	font-size: 20px;
+table tr:last-child {
+  border: none;
+}
+th {
+  color: #3d3d3d;
+  text-align: center;
+  cursor: default;
+  line-height: 1.2em;
+}
+td {
+  color: #3d3d3d;
+  text-align: center;
+  cursor: default;
+  line-height: 1.2em;
+  text-overflow: ellipsis;
+}
+.charttitle {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.7em;
+}
+.smalltitle td {
+  font-size: 15px;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.updown {
+	font-size : 13px;
 }
 
 td > img.albumArt {
   width: 50px;
   height: 50px;
 }
+.title {
+  padding-left: 10px;
+  text-align: left;
+}
 
+.album {
+  color: #c9c9c9;
+  font-size: 13px;
+}

@@ -2,6 +2,7 @@ package test.crawling;
 
 public class Music {
 	private int rank;
+	private String updown;
 	private String title;
 	private String artist;
 	private String album;
@@ -18,11 +19,28 @@ public class Music {
 		this.albumArt = albumArt;
 		
 	}
+	public Music(int rank, String updown, String title, String artist, String album, String albumArt) {
+		super();
+		this.rank = rank;
+		this.updown = updown;
+		this.title = title;
+		this.artist = artist;
+		this.album = album;
+		this.albumArt = albumArt;
+		
+	}
+	
 	public int getRank() {
 		return rank;
 	}
 	public void setRank(int rank) {
 		this.rank = rank;
+	}
+	public String getUpdown() {
+		return updown;
+	}
+	public void setUpdown(String updown) {
+		this.updown = updown;
 	}
 	public String getTitle() {
 		return title;
@@ -50,7 +68,7 @@ public class Music {
 	}
 	@Override
 	public String toString() {
-		return "순위 : " + rank + ", 제목: " + title + ", 가수: " + artist + ", 앨범: " + album + ", 앨범아트: " + albumArt;
+		return "순위 : " + rank+ ", 순위등락: " + updown + ", 제목: " + title + ", 가수: " + artist + ", 앨범: " + album + ", 앨범아트: " + albumArt;
 	}
 	
 }

@@ -23,6 +23,7 @@ public class Bugs extends HttpServlet {
 
 		List<Music> bugslist = new ArrayList<>();
 		Elements title = doc.select("tbody>tr>th>p.title>a");
+//		title.addAll(doc.select("tbody>tr>th>p.title>span").not(".badge permission"));
 		Elements artist = doc.select("tbody>tr>td.left>p.artist>a").not(".more");
 		Elements album = doc.select("tbody>tr>td.left>a.album");
 		Elements albumArt = doc.select("tbody>tr>td>a>img");
