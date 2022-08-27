@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -20,6 +22,8 @@ public class Vibe {
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--start-maximized");
 		options.addArguments("headless");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--blink-settings=imagesEnabled=false");
 		ChromeDriver driver = new ChromeDriver(options);
 
 		String url = "https://vibe.naver.com/chart/total";
@@ -34,7 +38,7 @@ public class Vibe {
 			List<WebElement> el2 = driver.findElementsByCssSelector("td.artist");
 			List<WebElement> el3 = driver.findElementsByCssSelector(".album>a");
 			List<WebElement> el4 = driver.findElementsByCssSelector(".img_thumb");
-
+			
 			for (int i = 0; i < 100; i++) {
 				int rank = i + 1;
 				String title_temp = el1.get(i).getAttribute("title");
@@ -52,28 +56,5 @@ public class Vibe {
 
 		return vibelist;
 
-	}
-
-	public static String vibeTime() {
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-popup-blocking");
-		options.addArguments("--start-maximized");
-		options.addArguments("headless");
-		ChromeDriver driver = new ChromeDriver(options);
-		String vibetime = null;
-		try {
-			String url5 = "https://vibe.naver.com/chart/total";
-			driver.get(url5);
-			Thread.sleep(2000);
-			List<WebElement> el1 = driver.findElementsByCssSelector("#content > div.sub > span");
-			vibetime = el1.get(0).getText();
-			return vibetime;
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} finally {
-			driver.quit();
-		}
-		return null;
 	}
 }

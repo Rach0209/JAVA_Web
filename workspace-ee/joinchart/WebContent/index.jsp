@@ -1,6 +1,8 @@
+<%@page import="test.crawling.Vibej"%>
 <%@page import="test.crawling.YoutubeMusic"%>
 <%@page import="test.crawling.Youtube"%>
 <%@page import="test.crawling.Vibe"%>
+<%@page import="test.crawling.Floj"%>
 <%@page import="org.openqa.selenium.WebElement"%>
 <%@page import="org.openqa.selenium.chrome.ChromeDriver"%>
 <%@page import="org.openqa.selenium.chrome.ChromeOptions"%>
@@ -31,18 +33,18 @@
 </head>
 <body>
 	<%
-		List<Music> melonlist = Melon.crawlingMelon();
+	List<Music> melonlist = Melon.crawlingMelon();
 	request.setAttribute("melonlist", melonlist);
 	List<Music> genielist = Genie.crawlingGenie();
 	request.setAttribute("genielist", genielist);
 	List<Music> bugslist = Bugs.crawlingBugs();
 	request.setAttribute("bugslist", bugslist);
-	List<Music> flolist = Flo.crawlingFlo();
+	List<Music> flolist = Floj.crawlingFlo();
 	request.setAttribute("flolist", flolist);
-	List<Music> vibelist = Vibe.crawlingVibe();
+	List<Music> vibelist = Vibej.crawlingVibe();
 	request.setAttribute("vibelist", vibelist);
-	List<YoutubeMusic> youtubelist = Youtube.crawlingYoutube();
-	request.setAttribute("youtubelist", youtubelist);
+	/* List<YoutubeMusic> youtubelist = Youtube.crawlingYoutube();
+	request.setAttribute("youtubelist", youtubelist); */
 
 	String url1 = "https://www.melon.com/chart/index.htm";
 	String url2 = "https://www.genie.co.kr/chart/top200";
@@ -50,23 +52,55 @@
 	String url4 = "https://www.music-flo.com/browse";
 	String url5 = "https://vibe.naver.com/chart/total";
 
-	//크롤링하고싶은 대상 url 을 적는다 
+	 //크롤링하고싶은 대상 url 을 적는다 
 	Document doc = Jsoup.connect(url1).get();
 	Elements melontime = doc.select("div.calendar_prid>span");
 	request.setAttribute("melontime", melontime);
 
-	String genietime = Genie.genieTime();
-	request.setAttribute("genietime", genietime);
+	/*WebDriverManager.chromedriver().setup();
+	ChromeOptions options = new ChromeOptions();
+	options.addArguments("--disable-popup-blocking");
+	options.addArguments("--start-maximized");
+	options.addArguments("headless");
+	options.addArguments("--disable-gpu");
+	options.addArguments("--blink-settings=imagesEnabled=false");
+	ChromeDriver driver = new ChromeDriver(options);
+
+	String genietime = null;
+	String genietime2 = null;
+
+	try {
+		driver.get("https://www.genie.co.kr/chart/top200");
+		Thread.sleep(2000);
+		List<WebElement> el = driver.findElementsById("inc_date");
+		List<WebElement> el2 = driver.findElementsById("inc_time");
+		genietime = el.get(0).getText() + " " + el2.get(0).getText();
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+	request.setAttribute("genietime", genietime); */
 
 	Document doc3 = Jsoup.connect(url3).get();
 	String bugstime = doc3.select("time").text().substring(0, 16);
 	request.setAttribute("bugstime", bugstime);
 
-	String flotime_temp = Flo.floTime();
-	request.setAttribute("flotime", flotime_temp);
-	
-	String vibetime = Vibe.vibeTime();
-	request.setAttribute("vibetime", vibetime);
+	/* try {
+		driver.get(url4);
+		Thread.sleep(2000);
+		WebElement flotime = driver.findElementByCssSelector("p.update>span");
+
+		String flotime_temp = flotime.getText();
+		System.out.println(flotime_temp);
+		request.setAttribute("flotime", flotime_temp);
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	} */
+
+	String vibeTime = Vibej.vibeTime();
+	request.setAttribute("vibeTime", vibeTime);
 	%>
 	<main>
 		<section class="chart">
@@ -106,7 +140,7 @@
 					<td colspan="5" class="charttitle">지니차트 top 100</td>
 				</tr>
 				<tr class="time">
-					<th colspan="5">기준 시간 : ${ genietime }</th>
+					<th colspan="5">기준 시간 : ${ bugstime }</th>
 				</tr>
 				<tr class="smalltitle">
 					<th colspan="2">순위</th>
@@ -145,7 +179,7 @@
 				</tr>
 				<c:forEach items="${ bugslist }" var="bugs" varStatus="i">
 					<tr>
-						<td class="rank"><c:out value="${ bugs.rank }" /></td>
+						<td \class="rank"><c:out value="${ bugs.rank }" /></td>
 						<td class="updown"><c:out value="${ bugs.updown }" /></td>
 						<td><img class="albumArt" src="${ bugs.albumArt }" /></td>
 						<td class="title">
@@ -163,7 +197,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-<%-- 			<table>
+			<%-- 	<table>
 				<tr>
 					<td colspan="4" class="charttitle">Youtube 주간 인기곡 차트</td>
 				</tr>
@@ -176,20 +210,19 @@
 				</tr>
 				<c:forEach items="${ youtubelist }" var="youtube" varStatus="i">
 					<tr>
-						<td class="rank"><c:out value="${ youtube.rank }" /></td>
-						<td><img class="albumArt" src="${ youtube.albumArt }" /></td>
+						<td class="rank">
+							<c:out value="${ youtube.rank }" />
+						</td>
+						<td>
+							<a href="${ youtube.link }">
+								<img class="albumArt" src="${ youtube.albumArt }" />
+							</a>
+						</td>
 						<td class="title">
 							<p>
-								<a
-									href="https://www.youtube.com/results?search_query=${ youtube.title }+${ youtube.artist }+official">
-									<c:out value="${ youtube.title }" />
-								</a>
-							</p>
-							<p class="album">
-								<c:out value="${ youtube.link }" />
+								<c:out value="${ youtube.title }" />
 							</p>
 						</td>
-						<td class="artist"><c:out value="${ youtube.artist }" /></td>
 					</tr>
 				</c:forEach>
 			</table> --%>
@@ -229,7 +262,7 @@
 					<td colspan="5" class="charttitle">Vibe 차트</td>
 				</tr>
 				<tr class="time">
-					<th colspan="5">기준 시간 : ${ vibetime }</th>
+					<th colspan="5">기준 시간 : ${ vibeTime }</th>
 				</tr>
 				<tr class="smalltitle">
 					<th colspan="2">순위</th>
@@ -238,6 +271,7 @@
 				<c:forEach items="${ vibelist }" var="vibe" varStatus="i">
 					<tr>
 						<td class="rank"><c:out value="${ vibe.rank }" /></td>
+						<td class="rank"><c:out value="${ vibe.updown }" /></td>
 						<td><img class="albumArt" src="${ vibe.albumArt }" /></td>
 						<td class="title">
 							<p>

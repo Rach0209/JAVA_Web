@@ -4,16 +4,15 @@ public class YoutubeMusic {
 	private int rank;
 	private String title;
 	private String albumArt;
-	private String artist;
+	private String link;
 	
-	public YoutubeMusic(int rank, String title, String artist, String albumArt) {
+	public YoutubeMusic(int rank, String title, String albumArt, String link) {
 		this.rank = rank;
 		this.title = title;
-		this.artist = artist;
 		this.albumArt = albumArt;
+		this.link = link;
 	}
 	
-
 	public String getTitle() {
 		return title;
 	}
@@ -24,8 +23,9 @@ public class YoutubeMusic {
 	public String getAlbumArt() {
 		return albumArt;
 	}
-	public String getArtist() {
-		return artist;
+	public String getLink() {
+		return link;
 	}
 	
 }
+

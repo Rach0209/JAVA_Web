@@ -17,6 +17,8 @@ public class Youtube {
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--start-maximized");
 		options.addArguments("headless");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--blink-settings=imagesEnabled=false");
 		ChromeDriver driver = new ChromeDriver(options);
 		
 		String url = "https://charts.youtube.com/charts/TopSongs/kr?hl=ko";
@@ -44,7 +46,7 @@ public class Youtube {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			driver.quit();
+			driver.close();
 		}
 		return youtubeList;
 		
