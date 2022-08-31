@@ -105,24 +105,4 @@ public class Vibej {
 			
 		return vibeTime;
 	}
-	public static void main(String[] args) {
-		Vibej f = new Vibej();
-		try {
-	         List<Music> list = f.crawlingVibe();
-	         for (Music m : list) {
-	            System.out.println(m);
-	         }
-	      } catch (IOException e) {
-	         e.printStackTrace();
-	      }
-		
-		
-		//		try {
-//			String time = vibeTime();
-//			System.out.println(time);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-	}
 }
