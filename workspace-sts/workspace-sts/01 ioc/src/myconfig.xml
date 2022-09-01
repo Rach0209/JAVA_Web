@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- bean태그에 Attribute 붙여주기, class이름 id를 줌-->
+	<bean class="mybeans.MyBean" id="first"></bean>
+	
+	<!-- 생성자 인자 설정.
+		bean을 등록할 때, 생성자로서 객체에 대한 의존성을 주입해줌.
+		미리 등록해놓은 bean객체가 있어서, 시스템이 그 객체를 찾아가서 집어넣어 준것임. -->
+	<bean class="mybeans.MyLogic" id="second">
+		<constructor-arg ref="first"></constructor-arg> <!-- <constructor-arg> 는 생성자로, 의존성을 집어넣어주는 역할 -->
+	</bean>
+	
+	<!-- bean의 scope는 기본적으로 singleton -->
+	<bean class="mybeans.MyStatefulObj" id="third" scope="prototype">
+		<constructor-arg value="my-name"></constructor-arg>
+		<constructor-arg value="100"></constructor-arg>
+	</bean>
+	
+	<!-- property로 setter설정하기 name에 필드이름, value에 값, primary값(주요 빈으로 사용하겠다는 의미)-->
+	<bean class="mybeans.MyStatefulObj" id="fourth" scope="prototype" primary="true">
+		<property name="name" value="bysetter"></property>
+		<property name="number" value="400"></property>
+	</bean>
+	
+</beans>
