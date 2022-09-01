@@ -24,6 +24,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+//	@RequestMapping => 핸들러를 찾게끔 적어준 것. 반환값으로 문자열을 반환하기로 한 String home => 뷰의 이름이 됨
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
