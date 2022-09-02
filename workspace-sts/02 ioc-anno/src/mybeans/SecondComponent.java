@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecondComponent {
-//	필드 위에 @Autowired 선언해주면 알아서 찾아줌.
+//	필드 위에 @Autowired 선언해주면 알아서 찾아줌. -> 해당 타입의 Bean을 찾아간다.
 	@Autowired
 	private FirstComponent need;
 	

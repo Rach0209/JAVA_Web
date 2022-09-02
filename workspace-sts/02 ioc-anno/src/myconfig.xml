@@ -9,6 +9,6 @@
 	<!-- 밑에 Namespaces에서 context 체크해주기 -->
 	<!-- base-package에 만들어둔 패키지 이름 넣기. 해당 패키지의 컴포넌트를 찾아가서, 빈으로 등록해준다.-->
 	<context:component-scan base-package="mybeans"></context:component-scan>
-	<!--  -->
+	<!-- 어노테이션을 사용할 수 있게 설정해주기. -->
 	<context:annotation-config></context:annotation-config>
 </beans>

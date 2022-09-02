@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ThirdComponent {
 	private String value;
 	private int num;
-//	특정 값을 집어 넣는 @Value 어노테이션 (property 'value'는 생략 가능.)
+//	특정 값을 집어 넣는 @Value 어노테이션 (property 'value ='는 생략 가능.)
 	public ThirdComponent(@Value(value = "vvvv") String value, @Value("100") int num) {
 		this.value = value;
 		this.num = num;
