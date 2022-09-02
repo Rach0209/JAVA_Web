@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 // "/print" GET 요청 -> text 입력 가능 form으로 forward
 // form.jsp submit시 
@@ -27,5 +27,11 @@ public class PrintController {
 	public String print(@RequestParam String text, Model model) {
 		model.addAttribute("print", text);
 		return "print";
+	}
+	
+//	view가 필요없을 때, @ResponseBody를 많이 쓴다. (Ajax, api 같이 값만 받아올 때)
+	@GetMapping("/sub")
+	public @ResponseBody String sub() {
+		return "/print/sub";             
 	}
 }
