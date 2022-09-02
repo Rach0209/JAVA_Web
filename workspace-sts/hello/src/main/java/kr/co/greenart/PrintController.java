@@ -2,6 +2,8 @@ package kr.co.greenart;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,13 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
+@RequestMapping(value = "/print") // value 값이 같을 때, 클래스 위에 선언해주면 value값을 동일하게 할 수 있고, method방식 처리에 맞춰 따라감.
 public class PrintController {
-	@RequestMapping(value = "/print", method = RequestMethod.GET)
+//	@RequestMapping(method = RequestMethod.GET)
+	@GetMapping
 	public String form() {
 		return "form";
 	}
 	
-	@RequestMapping(value = "/print", method = RequestMethod.POST)
+//	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping
 	public String print(@RequestParam String text, Model model) {
 		model.addAttribute("print", text);
 		return "print";
