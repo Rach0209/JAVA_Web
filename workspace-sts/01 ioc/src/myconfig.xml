@@ -12,13 +12,13 @@
 		<constructor-arg ref="first"></constructor-arg> <!-- <constructor-arg> 는 생성자로, 의존성을 집어넣어주는 역할 -->
 	</bean>
 	
-	<!-- bean의 scope는 기본적으로 singleton -->
+	<!-- bean의 scope는 기본적으로 singleton, value는 String뿐만 아니라 list, map, set등 다양한 값 가능 -->
 	<bean class="mybeans.MyStatefulObj" id="third" scope="prototype">
 		<constructor-arg value="my-name"></constructor-arg>
 		<constructor-arg value="100"></constructor-arg>
 	</bean>
 	
-	<!-- property로 setter설정하기 name에 필드이름, value에 값, primary값(주요 빈으로 사용하겠다는 의미)-->
+	<!-- property로 setter설정하기 name에 필드이름, value에 값, primary값(주요 빈으로 사용하겠다는 의미-같은 참조가 여러개 있을 때)-->
 	<bean class="mybeans.MyStatefulObj" id="fourth" scope="prototype" primary="true">
 		<property name="name" value="bysetter"></property>
 		<property name="number" value="400"></property>
