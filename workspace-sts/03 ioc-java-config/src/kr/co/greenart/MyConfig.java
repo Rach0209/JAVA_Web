@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(value = "kr.co.greenart") // xml에서 base-package=값임. 
 public class MyConfig {
-//	리턴 타입에 등록하고자 하는 Bean의 타입을 적어주고, id를 메소드 이름으로 적어준다.
+//	리턴 타입에 등록하고자 하는 Bean의 타입을 적어주고, id(빈의 이름)를 메소드 이름으로 적어준다.
 	@Bean
 	public List<Integer> myList() {
 		return new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
